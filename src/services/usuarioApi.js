@@ -20,3 +20,13 @@ export async function registrarUsuario(data, token) {
   });
   return res.json();
 }
+export async function eliminarUsuario(id, token) {
+  const res = await fetch(`${API}/${id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  return res.json();
+}
